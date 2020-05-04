@@ -55,6 +55,12 @@ log.info(s);
 
     public static void main(String[] args) {
 
+	try{
 	new App().foo();}
+}
+catch (Exception e){
+
+        System.out.println (e.toString());
+}
 
 }
