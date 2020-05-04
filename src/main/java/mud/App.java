@@ -11,40 +11,25 @@ telnet rainmaker.wunderground.com | tee -a -i telnet.log
  */
 package mud;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Properties;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class App {
 
     private final static Logger log = Logger.getLogger(App.class.getName());
 
-    private void telnet() throws IOException   {
-
+    private void telnet() throws IOException {
         String s = "telnet rainmaker.wunderground.com | tee -a -i telnet.log";
         String t = "cmd /c telnet localhost 4445";
-        String u = "telnet localhost 4445 | tee -a -i telnet.log";
-        log.info(s);
-        log.info(t);
-        log.info(u);
+        String u = "telnet localhost 4445 | tee -a -i /home/thufir/telnet.log";
+        String v = "telnet localhost";
+        log.fine(s);
 
-        ProcessBuilder processBuilder = new ProcessBuilder(t);
-      //  Process process = processBuilder.start();
-
-//Process    process = Runtime.getRuntime();
-        //.exec(String.format("cmd.exe /c dir %s", homeDirectory));
+        ProcessBuilder processBuilder = new ProcessBuilder(v);
+        Process process = processBuilder.start();
     }
 
-    private void foo() {
-        String s = "telnet rainmaker.wunderground.com | tee -a -i telnet.log";
-        log.info(s);
-
-    }
-
-    public static void main(String[] args) throws IOException   {
+    public static void main(String[] args) throws IOException {
         new App().telnet();
     }
 
