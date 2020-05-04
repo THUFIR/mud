@@ -29,10 +29,19 @@ public class App {
 
     private void telnet() {
 
-
-
 String s = "telnet rainmaker.wunderground.com | tee -a -i telnet.log";
+String t = "cmd /c telnet localhost 4445";
 log.info(s);
+log.info(t);
+
+
+ProcessBuilder processBuilder = new ProcessBuilder(t);
+//        Process process = processBuilder.start();
+
+
+//Process    process = Runtime.getRuntime();
+      //.exec(String.format("cmd.exe /c dir %s", homeDirectory));
+
 
     }
 
