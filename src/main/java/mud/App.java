@@ -27,7 +27,7 @@ public class App {
     private final static Logger log = Logger.getLogger(App.class.getName());
 
 
-    private void telnet() {
+    private void telnet() throws IOException {
 
 String s = "telnet rainmaker.wunderground.com | tee -a -i telnet.log";
 String t = "cmd /c telnet localhost 4445";
@@ -47,6 +47,7 @@ ProcessBuilder processBuilder = new ProcessBuilder(t);
     }
 
     public static void main(String[] args) {
-	new App().telnet();
+try{	new App().telnet();}
+catch IOException ioe {log(ioe.toString();}
     }
 }
