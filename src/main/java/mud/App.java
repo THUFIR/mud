@@ -31,12 +31,13 @@ public class App {
 
 String s = "telnet rainmaker.wunderground.com | tee -a -i telnet.log";
 String t = "cmd /c telnet localhost 4445";
+String u = "telnet localhost 4445 | tee -a -i telnet.log";
 log.info(s);
 log.info(t);
 
 
 ProcessBuilder processBuilder = new ProcessBuilder(t);
-//        Process process = processBuilder.start();
+        Process process = processBuilder.start();
 
 
 //Process    process = Runtime.getRuntime();
