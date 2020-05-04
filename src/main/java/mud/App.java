@@ -34,6 +34,7 @@ String t = "cmd /c telnet localhost 4445";
 String u = "telnet localhost 4445 | tee -a -i telnet.log";
 log.info(s);
 log.info(t);
+log.info(u);
 
 
 ProcessBuilder processBuilder = new ProcessBuilder(t);
@@ -46,8 +47,14 @@ ProcessBuilder processBuilder = new ProcessBuilder(t);
 
     }
 
+private void foo(){
+String s = "telnet rainmaker.wunderground.com | tee -a -i telnet.log";
+log.info(s);
+
+}
+
     public static void main(String[] args) {
-try{	new App().telnet();}
-catch IOException ioe {log(ioe.toString();}
-    }
+
+	new App().foo();}
+
 }
